@@ -1,0 +1,44 @@
+{
+  "structure": [
+    ["Rain", "Maintenance"],
+    ["Rain", "Train"],
+    ["Maintenance", "Train"],
+    ["Train", "Appointment"]
+  ],
+  "variables": {
+    "Rain": ["none", "light", "heavy"],
+    "Maintenance": ["yes", "no"],
+    "Train": ["on time", "delayed"],
+    "Appointment": ["attend", "miss"]
+  },
+  "prob_cond_tabs": [
+    {
+      "variable": "Rain",
+      "probabilidades": [[0.7], [0.2], [0.1]]
+    },
+    {
+      "variable": "Maintenance",
+      "evidencia": ["Rain"],
+      "probabilidades": [
+        [0.4, 0.2, 0.1], 
+        [0.6, 0.8, 0.9]  
+      ]
+    },
+    {
+      "variable": "Train",
+      "evidencia": ["Rain", "Maintenance"],
+      "probabilidades": [
+        [0.8, 0.9, 0.6, 0.7, 0.4, 0.5],
+        [0.2, 0.1, 0.4, 0.3, 0.6, 0.5] 
+      ]
+    },
+    {
+      "variable": "Appointment",
+      "evidencia": ["Train"],
+      "probabilidades": [
+        [0.9, 0.6], 
+        [0.1, 0.4]
+      ]
+    }
+  ]
+}
