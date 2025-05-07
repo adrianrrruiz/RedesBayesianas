@@ -1,0 +1,49 @@
+{
+  "structure": [
+    ["Exam level", "Marks"],
+    ["IQ level", "Marks"],
+    ["Marks", "Admission"],
+    ["IQ level", "Apti. score"]
+  ],
+  "variables": {
+    "Exam level": ["dificil", "facil"],
+    "Marks": ["bajas", "altas"],
+    "IQ level": ["alto", "bajo"],
+    "Admission": ["admitido", "no admitido"],
+    "Apti. score": ["alto", "bajo"]
+  },
+  "prob_cond_tabs": [
+    {
+      "variable": "Exam level",
+      "probabilidades": [[0.7], [0.3]]
+    },
+    {
+      "variable": "IQ level",
+      "probabilidades": [[0.8], [0.2]]
+    },
+    {
+      "variable": "Marks",
+      "evidencia": ["IQ level", "Exam level"],
+      "probabilidades": [
+        [0.6, 0.9, 0.5, 0.8],
+        [0.4, 0.1, 0.5, 0.2] 
+      ]
+    },
+    {
+      "variable": "Admission",
+      "evidencia": ["Marks"],
+      "probabilidades": [
+        [0.6, 0.9], 
+        [0.4, 0.1]
+      ]
+    },
+    {
+      "variable": "Apti. score",
+      "evidencia": ["IQ level"],
+      "probabilidades": [
+        [0.75, 0.4], 
+        [0.25, 0.6]
+      ]
+    }
+  ]
+}
