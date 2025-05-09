@@ -4,7 +4,8 @@ Para ejecutar el proyecto se debe tener ***Python*** instalado
 
 ## Instalar dependencias
 ```
-pip install pgmy rich
+pip install pgmpy
+pip install rich
 ```
 
 ## Ejecutar programa
